@@ -16,7 +16,7 @@ class Bateau:
             col = col + 1
 
     def verif_etat(self):
-        if self.coo == []:
+        if not self.coo:
             return True
         else:
             return False

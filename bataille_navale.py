@@ -1,16 +1,17 @@
 from joueur import Joueur
 import os
 
-class Bataille_navale:
+
+class BatailleNavale:
 
     def __init__(self):
         start = input("Démarrez le jeu ? (oui ou non) -----> ")
         if start in ["oui", "Oui", "OUI"]:
-            self.playPVP()
+            self.play_pvp()
         else:
             print("Une prochaine fois peut-être...")
 
-    def playPVP(self):
+    def play_pvp(self):
         nom_joueur = input("Joueur 1, quel est votre nom ? -----> ")
         j1 = Joueur(nom_joueur)
         j1.placement_flotte()
@@ -40,7 +41,18 @@ class Bataille_navale:
                     self.clear_screen()
         print("\nMerci d'avoir joué!")
 
-    def flotte_coule(self, joueur):
+    @staticmethod
+    def message_victorieux(gagnant, perdant):
+        print("\n\n\n*****************************************")
+        print("La flotte de %s a été coulée, %s a gagné!" % (perdant.nom, gagnant.nom))
+        print("*****************************************")
+
+    @staticmethod
+    def clear_screen():
+        os.system('cls')
+
+    @staticmethod
+    def flotte_coule(joueur):
         nbr_bateau = 0
         for grille_ligne in joueur.grille.grille:
             for case in grille_ligne:
@@ -50,11 +62,3 @@ class Bataille_navale:
             return True
         else:
             return False
-
-    def clear_screen(self):
-        os.system('cls')
-
-    def message_victorieux(self, gagnant, perdant):
-        print("\n\n\n*****************************************")
-        print("La flotte de %s a été coulée, %s a gagné!" % (perdant.nom, gagnant.nom))
-        print("*****************************************")

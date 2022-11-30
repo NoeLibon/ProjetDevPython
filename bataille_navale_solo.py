@@ -1,22 +1,21 @@
-from bataille_navale import Bataille_navale
+from bataille_navale import BatailleNavale
 from ordi import Ordi
 from joueur import Joueur
 
 
-class Mode_solo(Bataille_navale):
+class ModeSolo(BatailleNavale):
 
     def __init__(self):
         start = input("Démarrez le jeu ? (oui ou non) -----> ")
         if start in ["oui", "Oui", "OUI"]:
-            self.playSOLO()
+            self.play_solo()
         else:
             print("Une prochaine fois peut-être...")
 
-    def playSOLO(self):
+    def play_solo(self):
         nom_joueur = input("Quel est le nom du joueur ? -----> ")
         j = Joueur(nom_joueur)
         j.placement_flotte()
-        j.apercu_ocean()
         self.clear_screen()
 
         o = Ordi()

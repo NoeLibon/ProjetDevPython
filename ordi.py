@@ -57,6 +57,7 @@ class Ordi(Joueur):
                 cible.grille.grille[ligne][col] = "X"
                 cible.coup_enregistre(ligne, col)
                 self.terrain_ennemi.terrain_ennemi[ligne][col] = "X"
+                self.emplacements['x']['moi'].append((ligne, col))
 
             else:
                 print("Raté....recalibrage du canon")

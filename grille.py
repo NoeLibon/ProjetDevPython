@@ -1,7 +1,7 @@
 class Grille:
 
     def __init__(self, longueur=10, hauteur=10):
-        self.grille = [["~" for i in range(longueur)] for i in range(hauteur)]
+        self.grille = [["~" for _ in range(longueur)] for _ in range(hauteur)]
 
     def __getitem__(self, case):
         ligne, col = case
@@ -17,16 +17,16 @@ class Grille:
 
     def verif_col(self, ligne):
         try:
-            var = self.grille[ligne]
-            #self.grille[ligne]
-            return True
+            if self.grille[ligne]:
+                # self.terrain_ennemi[ligne]
+                return True
         except IndexError:
             return False
 
     def verif_ligne(self, col):
         try:
-            var = self.grille[0][col]
-            return True
+            if self.grille[0][col]:
+                return True
         except IndexError:
             return False
 
@@ -79,4 +79,3 @@ class Grille:
         for i in range(taille):
             self.grille[ligne][col] = "B"
             ligne = ligne + 1
-
