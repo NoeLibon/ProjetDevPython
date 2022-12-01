@@ -1,4 +1,4 @@
-from joueur import Joueur
+from units.joueur import Joueur
 import os
 
 
@@ -14,14 +14,17 @@ class BatailleNavale:
     def play_pvp(self):
         nom_joueur = input("Joueur 1, quel est votre nom ? -----> ")
         j1 = Joueur(nom_joueur)
-        j1.placement_flotte()
-        j1.apercu_ocean()
-        self.clear_screen()
-
         nom_joueur2 = input("\n\nJoueur 2, quel est votre nom ? -----> ")
         j2 = Joueur(nom_joueur2)
+        j1.recuperer_nom_ennemi(nom=nom_joueur2)
+        j2.recuperer_nom_ennemi(nom=nom_joueur)
+
+        print(j1.nom)
+        j1.placement_flotte()
+        self.clear_screen()
+
+        print(j2.nom)
         j2.placement_flotte()
-        j2.apercu_ocean()
         self.clear_screen()
 
         drapeau = True

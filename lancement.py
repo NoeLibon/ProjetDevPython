@@ -1,5 +1,5 @@
-from bataille_navale import BatailleNavale
-from bataille_navale_solo import ModeSolo
+from modes.bataille_navale import BatailleNavale
+from modes.bataille_navale_solo import ModeSolo
 
 
 def jeu():

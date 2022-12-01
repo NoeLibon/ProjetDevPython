@@ -10,14 +10,28 @@ class UserInterface:
         self.titre = Label(self.fenetre, text='Bataille navale', font=('Courrier', 40), bg='#03224c', fg='white')
         self.titre.pack()
 
-        self.grilles = Frame(self.fenetre)
+        self.grilles = Frame(self.fenetre, background='#03224c')
         self.grilles.pack(expand=YES)
 
+        self.ennemi = Frame(self.grilles)
+        self.ennemi.grid(row=0, column=0)
+
+        self.joueur = Frame(self.grilles)
+        self.joueur.grid(row=0, column=1)
+
         self.terrain_ennemi = Frame(self.grilles, borderwidth=1)
-        self.terrain_ennemi.grid(row=0, column=0)
+        self.terrain_ennemi.grid(row=1, column=0)
 
         self.mon_terrain = Frame(self.grilles, borderwidth=1)
-        self.mon_terrain.grid(row=0, column=1)
+        self.mon_terrain.grid(row=1, column=1)
+
+    def afficher_nom_ennemi(self, nom):
+        nom_ennemi = Label(self.ennemi, text=nom, font=('Courrier', 25), bg='#03224c', fg='white')
+        nom_ennemi.pack(expand=YES)
+
+    def afficher_mon_nom(self, nom):
+        mon_nom = Label(self.joueur, text=nom, font=('Courrier', 25), bg='#03224c', fg='white')
+        mon_nom.pack(expand=YES)
 
     def initialiser_terrain_ennemi(self):
         for x in range(10):
@@ -73,6 +87,3 @@ class UserInterface:
 
     def lancer(self):
         self.fenetre.mainloop()
-
-    def apres(self, function):
-        self.fenetre.after(0, function)
