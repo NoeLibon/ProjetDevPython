@@ -1,0 +1,20 @@
+
+Vous venez de lancer le jeu Bataille Navale,
+Vous trouverez dans ce guide toutes les informations necessaires.
+Pour commencer, choisissez le mode de jeu auquel vous souhaitez jouer.
+Le mode multijoueur vous permettra d'affronter un ami, le gagnant sera celui qui aura coule l'entierete des bateaux adverses.
+Ce premier mode se joue au tour par tour.
+Le mode 1 joueur vous ferra affronter l'ordinateur avec les mêmes regles que le mode multijoeur.
+Le mode rafale vous offre une experience de jeu inedite,
+Chaque bateau touche vous rapportera des points qui vous permettront de tirer à nouveau.
+Trouvez les bateaux ennemis et bombardez les.
+
+Chaque mode commence par vous demandez le nom du ou des joueurs.
+Il vous faudra ensuite renseigner les coordonnees de vos bateaux,
+un ordonnee et une abscisse pour le point de depart de votre bateau ainsi qu'une orientation.
+Le bateau se construira et remplira les cases en fonction des informations fournis.
+D'autres informations vous serons proposees lors du jeu.
+
+Une fois tous les navires positionnes,
+Il vous faudra cibler une case adversaire.
+Le resultat de votre tir sera affiche à l'ecran.
