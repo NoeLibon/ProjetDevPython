@@ -15,6 +15,8 @@ class Joueur:
         self.nom_ennemi = ''
         self.flotte = []
         self.emplacements = {'v': [], 'h': [], 'o': [], 'x': {'ennemi': [], 'moi': []}}
+        self.compteurj1 = 0
+        self.compteurj2 = 0
 
     def placement_flotte(self):
         print("Choisissez une coordonnées entre 0 et 9 pour atribuer une ligne et une colonne à votre bateau ")
@@ -112,6 +114,154 @@ class Joueur:
         input()
         os.system('cls')
         self.apercu_ocean()
+        
+    def tir_rafalej1(self, cible):
+        self.apercu_ocean()
+        try:
+            print("\n%s Entrez les coordonnées à cibler..." % (self.nom))
+            ligne = int(input("Choisissez une ligne -----> "))
+            col = int(input("Choisissez une colonne -----> "))
+            self.compteurj1 += 20
+            print("vous disposez de %i points" % self.compteurj1)
+
+            if self.grille.verif_ligne(ligne) and self.grille.verif_col(col):
+                if cible.grille[ligne, col] == "B":
+                    print("Touché!!!")
+                    cible.grille[ligne, col] = "X"
+                    cible.coup_enregistre(ligne, col)
+                    self.terrain_ennemi[ligne, col] = "X"
+                    self.compteurj1 += 100
+                    print("vous disposez de %i points" % self.compteurj1)
+
+                else:
+                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                        print("Coordonnées déjà ciblées....Regardez votre carte!")
+                        self.tir_rafalej1(cible)
+                    else:
+                        print("Manqué...")
+                        self.terrain_ennemi.terrain_ennemi[ligne][col] = "O"
+
+            else:
+                print("Ne visez pas le Lune, entrez des coordonnées valides...")
+                self.tir_rafalej1(cible)
+
+        except ValueError:
+            print("Vous devez entrer des coordonnées....\n")
+            self.tir_rafalej1(cible)
+
+        while self.compteurj1 > 80 or self.flotte_coule(j2) is True:
+            nouv = input("dépenser 80 points pour tirer à nouveau ? oui ou non -----> ")
+            if nouv in ["oui", "Oui", "OUI"]:
+                self.compteurj1 -= 80
+                self.apercu_ocean()
+                try:
+                    print("\n%s Entrez les coordonnées à cibler..." % (self.nom))
+                    ligne = int(input("Choisissez une ligne -----> "))
+                    col = int(input("Choisissez une colonne -----> "))
+
+                    if self.grille.verif_ligne(ligne) and self.grille.verif_col(col):
+                        if cible.grille[ligne, col] == "B":
+                            print("Touché!!!")
+                            cible.grille[ligne, col] = "X"
+                            cible.coup_enregistre(ligne, col)
+                            self.terrain_ennemi[ligne, col] = "X"
+                            self.compteurj1 += 100
+                            print("vous disposez de %i points" % self.compteurj1)
+
+                        else:
+                            if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                                print("Coordonnées déjà ciblées....Regardez votre carte!")
+                            else:
+                                print("Manqué...")
+                                self.terrain_ennemi.terrain_ennemi[ligne][col] = "O"
+
+                    else:
+                        print("Ne visez pas le Lune, entrez des coordonnées valides...")
+
+                except ValueError:
+                    print("Vous devez entrer des coordonnées....\n")
+            else:
+                print("vous décidez de ne pas utiliser vos points")
+                break
+        print("vous disposez de %i points" % self.compteurj1)
+
+        input("Appuyez sur une touche pour continuer")
+        os.system('cls')
+
+    def tir_rafalej2(self, cible):
+        self.apercu_ocean()
+        try:
+            print("\n%s Entrez les coordonnées à cibler..." % (self.nom))
+            ligne = int(input("Choisissez une ligne -----> "))
+            col = int(input("Choisissez une colonne -----> "))
+            self.compteurj2 += 20
+            print("vous disposez de %i points" % self.compteurj2)
+
+            if self.grille.verif_ligne(ligne) and self.grille.verif_col(col):
+                if cible.grille[ligne, col] == "B":
+                    print("Touché!!!")
+                    self.compteurj2 += 100
+                    print("vous disposez de %i points" % self.compteurj2)
+
+                    cible.grille[ligne, col] = "X"
+                    cible.coup_enregistre(ligne, col)
+                    self.terrain_ennemi[ligne, col] = "X"
+                else:
+                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                        print("Coordonnées déjà ciblées....Regardez votre carte!")
+                        self.tir_rafalej2(cible)
+                    else:
+                        print("Manqué...")
+                        self.terrain_ennemi.terrain_ennemi[ligne][col] = "O"
+
+            else:
+                print("Ne visez pas le Lune, entrez des coordonnées valides...")
+                self.tir_rafalej2(cible)
+
+        except ValueError:
+            print("Vous devez entrer des coordonnées....\n")
+            self.tir_rafalej2(cible)
+
+        while self.compteurj2 > 80 or self.flotte_coule(j1) is True:
+            nouv = input("dépenser 80 points pour tirer à nouveau ? oui ou non -----> ")
+            if nouv in ["oui", "Oui", "OUI"]:
+                self.compteurj2 -= 80
+                self.apercu_ocean()
+                try:
+                    print("\n%s Entrez les coordonnées à cibler..." % (self.nom))
+                    ligne = int(input("Choisissez une ligne -----> "))
+                    col = int(input("Choisissez une colonne -----> "))
+
+                    if self.grille.verif_ligne(ligne) and self.grille.verif_col(col):
+                        if cible.grille[ligne, col] == "B":
+                            print("Touché!!!")
+                            cible.grille[ligne, col] = "X"
+                            cible.coup_enregistre(ligne, col)
+                            self.terrain_ennemi[ligne, col] = "X"
+                            self.compteurj2 += 100
+                            print("vous disposez de %i points" % self.compteurj2)
+
+                        else:
+                            if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                                print("Coordonnées déjà ciblées....Regardez votre carte!")
+                            else:
+                                print("Manqué...")
+                                self.terrain_ennemi.terrain_ennemi[ligne][col] = "O"
+
+                    else:
+                        print("Ne visez pas le Lune, entrez des coordonnées valides...")
+
+                except ValueError:
+                    print("Vous devez entrer des coordonnées....\n")
+            else:
+                print("vous décidez de ne pas utiliser vos points")
+                break
+        print("vous disposez de %i points" % self.compteurj2)
+
+        input("Appuyez sur une touche pour continuer")
+        os.system('cls')
+ 
+    
 
     def afficher_interface_graphique(self):
         ui = UserInterface()
