@@ -9,6 +9,10 @@ def jeu():
 
     print("\n 1) Multijoueur")
     print("\n 2) 1 joueur")
+    print("\n 3) mode rafale")
+    print("\n 4) score")
+    print("\n 5) instructions")
+    print("\n 6) Quitter le jeu")
 
     drapeau = True
 
@@ -22,10 +26,21 @@ def jeu():
             elif mode == 2:
                 drapeau = False
                 ModeSolo()
+                        elif mode == 3:
+                drapeau = False
+                Mode_rafale()
+            elif mode == 4:
+                drapeu = False
+                Score()
+            elif mode == 5:
+                drapeau = False
+                Aide()
+            elif mode == 6:
+                break
             else:
                 continue
         except ValueError:
             print("Veillez choisir un chiffre renseigné à l'écran")
 
-
-jeu()
+if __name__ == "__main__":
+    jeu()
