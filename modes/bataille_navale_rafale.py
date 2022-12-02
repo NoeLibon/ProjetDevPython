@@ -31,17 +31,6 @@ class Mode_rafale(Bataille_navale):
             j1.tir_rafalej1(j2)
             if self.flotte_coule(j2) is True:
                 self.message_victorieux(j1, j2)
-
-                sqlite_file = (r"C:\Users\32498\sqlite3\data.db")
-                connection = sqlite3.connect(sqlite_file)
-                cursor = connection.cursor()
-                sql = "CREATE TABLE IF NOT EXISTS " + "db" + "(id integer PRIMARY KEY AUTOINCREMENT, result char not null)"
-                cursor.execute(sql)
-                sql = "INSERT INTO " + "db" + "(result) VALUES (\"self.message_victorieux(j1, j2)\")"
-                cursor.execute(sql)
-
-                connection.commit()
-                cursor.close()
                 drapeau = False
             else:
                 self.clear_screen()
@@ -50,17 +39,6 @@ class Mode_rafale(Bataille_navale):
                 if self.flotte_coule(j1) is True:
                     self.message_victorieux(j2, j1)
 
-                    sqlite_file = (r"C:\Users\32498\sqlite3\data.db")
-                    connection = sqlite3.connect(sqlite_file)
-                    cursor = connection.cursor()
-                    sql = "CREATE TABLE IF NOT EXISTS " + "db" + "(id integer PRIMARY KEY AUTOINCREMENT, result char not null)"
-                    cursor.execute(sql)
-                    sql = "INSERT INTO " + "db" + "(result) VALUES (\"self.message_victorieux(j2, j1)\")"
-                    cursor.execute(sql)
-
-                    connection.commit()
-                    cursor.close()
-                    drapeau = False
                 else:
                     self.clear_screen()
         print("\nMerci d'avoir joué!")
