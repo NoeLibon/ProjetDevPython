@@ -96,7 +96,7 @@ class Joueur:
                     cible.emplacements['x']['moi'].append((ligne, col))
 
                 else:
-                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O" or self.terrain_ennemi.terrain_ennemi[ligne][col] == "X":
                         print("Coordonnées déjà ciblées....Regardez votre carte!")
                         self.tir(cible)
                     else:
@@ -134,7 +134,7 @@ class Joueur:
                     print("vous disposez de %i points" % self.compteurj1)
 
                 else:
-                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O" or self.terrain_ennemi.terrain_ennemi[ligne][col] == "X":
                         print("Coordonnées déjà ciblées....Regardez votre carte!")
                         self.tir_rafalej1(cible)
                     else:
@@ -169,7 +169,7 @@ class Joueur:
                             print("vous disposez de %i points" % self.compteurj1)
 
                         else:
-                            if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                            if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O" or self.terrain_ennemi.terrain_ennemi[ligne][col] == "X":
                                 print("Coordonnées déjà ciblées....Regardez votre carte!")
                             else:
                                 print("Manqué...")
@@ -207,7 +207,7 @@ class Joueur:
                     cible.coup_enregistre(ligne, col)
                     self.terrain_ennemi[ligne, col] = "X"
                 else:
-                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                    if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O" or self.terrain_ennemi.terrain_ennemi[ligne][col] == "X":
                         print("Coordonnées déjà ciblées....Regardez votre carte!")
                         self.tir_rafalej2(cible)
                     else:
@@ -242,7 +242,7 @@ class Joueur:
                             print("vous disposez de %i points" % self.compteurj2)
 
                         else:
-                            if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O":
+                            if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O" or self.terrain_ennemi.terrain_ennemi[ligne][col] == "X":
                                 print("Coordonnées déjà ciblées....Regardez votre carte!")
                             else:
                                 print("Manqué...")
