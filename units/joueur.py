@@ -260,8 +260,6 @@ class Joueur:
 
         input("Appuyez sur une touche pour continuer")
         os.system('cls')
- 
-    
 
     def afficher_interface_graphique(self):
         ui = UserInterface()

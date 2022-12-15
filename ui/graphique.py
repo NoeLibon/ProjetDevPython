@@ -34,6 +34,12 @@ class UserInterface:
         mon_nom.pack(expand=YES)
 
     def initialiser_terrain_ennemi(self):
+        """
+        Crée une succession de cases afin de créer une grille pour le terrain ennemi
+
+        PRE : self est un objet de type UserInterface
+        POST : crée une grille de taille 10x10 cases contenant "."
+        """
         for x in range(10):
             for y in range(10):
                 case = Frame(self.terrain_ennemi, bg='#03224c')
@@ -43,6 +49,12 @@ class UserInterface:
                 case_par_defaut.pack(expand=YES)
 
     def initialiser_mon_terrain(self):
+        """
+        Crée une succession de cases afin de créer une grille pour le terrain du joueur
+
+        PRE : self est un objet de type UserInterface
+        POST : crée une grille de taille 10x10 cases contenant "~"
+        """
         for x in range(10):
             for y in range(10):
                 case = Frame(self.mon_terrain, bg='#03224c')
@@ -52,6 +64,14 @@ class UserInterface:
                 case_par_defaut.pack(expand=YES)
 
     def identifier_bateau_col(self, ligne, col, taille):
+        """
+        Alloue des cases pour le placement d'un bateau horizontal
+
+        PRE : self est un objet de type UserInterface, ligne et col sont des entiers nuls ou positifs, taille est un
+        entier positif non nul
+        POST : remplace une case contenant "~" par une case contenant "B" aux coordonnées ligne
+        et col donnés en paramètre + remplace celles à droite aussi juqu'à atteindre la taille donnée en paramètre
+        """
         for _ in range(taille):
             case = Frame(self.mon_terrain, bg='#03224c')
             case.grid(row=ligne, column=col)
@@ -60,6 +80,14 @@ class UserInterface:
             col = col + 1
 
     def identifier_bateau_ligne(self, ligne, col, taille):
+        """
+        Alloue des cases pour le placement d'un bateau vertical
+
+        PRE : self est un objet de type UserInterface, ligne et col sont des entiers nuls ou positifs, taille est un
+        entier positif non nul
+        POST : remplace une case contenant "~" par une case contenant "B" aux coordonnées ligne
+        et col donnés en paramètre + remplace celles en-dessous aussi juqu'à atteindre la taille donnée en paramètre
+        """
         for _ in range(taille):
             case = Frame(self.mon_terrain, bg='#03224c')
             case.grid(row=ligne, column=col)
@@ -68,18 +96,39 @@ class UserInterface:
             ligne = ligne + 1
 
     def identifier_case_manquee(self, ligne, col):
+        """
+        Crée une case à l'endroit où un tir a été effectué et manqué chez l'ennemi
+
+        PRE : self est un objet de type UserInterface, ligne et col sont des entiers nuls ou positifs
+        POST : remplace une case contenant "." par une case contenant "O" aux coordonnées ligne et col donnés
+        en paramètres
+        """
         case = Frame(self.terrain_ennemi, bg='#03224c')
         case.grid(row=ligne, column=col)
         case_touchee = Label(case, text='O', font=('Courrier', 15), bg='#03224c', fg='white', width=4, height=2)
         case_touchee.pack(expand=YES)
 
     def identifier_case_touchee_chez_ennemi(self, ligne, col):
+        """
+        Crée une case à l'endroit où un tir a été effectué et touché chez l'ennemi
+
+        PRE : self est un objet de type UserInterface, ligne et col sont des entiers nuls ou positifs
+        POST : remplace une case contenant "." par une case contenant "X" aux coordonnées ligne et col donnés
+        en paramètres
+        """
         case = Frame(self.terrain_ennemi, bg='#03224c')
         case.grid(row=ligne, column=col)
         case_touchee = Label(case, text='X', font=('Courrier', 15), bg='#03224c', fg='white', width=4, height=2)
         case_touchee.pack(expand=YES)
 
     def identifier_case_touchee_chez_moi(self, ligne, col):
+        """
+        Crée une case à l'endroit où un tir a été effectué et manqué sur le terrain du joueur
+
+        PRE : self est un objet de type UserInterface, ligne et col sont des entiers nuls ou positifs
+        POST : remplace une case contenant "~" par une case contenant "X" aux coordonnées ligne et col donnés
+        en paramètres
+        """
         case = Frame(self.mon_terrain, bg='#03224c')
         case.grid(row=ligne, column=col)
         case_touchee = Label(case, text='X', font=('Courrier', 15), bg='#03224c', fg='white', width=4, height=2)
