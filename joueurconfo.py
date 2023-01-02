@@ -4,10 +4,10 @@ from units.terrainennemi import TerrainEnnemi
 from units.bateau import Bateau
 from ui.graphique import UserInterface
 import os
-from units.erreur import invalidInputNum
-from units.erreur import invalidInputOri
-from units.erreur import invalidPostion
-from units.erreur import invalidCooCiblee
+from units.erreur import InvalidInputNum
+from units.erreur import InvalidInputOri
+from units.erreur import InvalidPostion
+from units.erreur import InvalidCooCiblee
 
 
 class Joueur:
@@ -41,18 +41,18 @@ class Joueur:
                     abs_PA = int(self.tab[0])
                     oor_PA = int(self.tab[1])
                     if not 0 <= abs_PA <= 9 or not 0 <= oor_PA <= 9:
-                        raise invalidInputNum
+                        raise InvalidInputNum
 
-                except invalidInputNum:
+                except InvalidInputNum:
                     sys.stderr.write("abs ou coo hors norme")
                     self.count5 += 1
 
                 try:
                     ori_PA = self.tab[2]
                     if ori_PA not in ["v", "V", "h", "H"]:
-                        raise invalidInputOri
+                        raise InvalidInputOri
 
-                except invalidInputOri:
+                except InvalidInputOri:
                     sys.stderr.write("orientation incorrect")
                     ori_PA = "v"
 
@@ -69,8 +69,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count5 += 1
 
@@ -83,8 +83,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count5 += 1
                 os.system('cls')
@@ -103,18 +103,18 @@ class Joueur:
                     abs_Cr = int(self.tab[3])
                     oor_Cr = int(self.tab[4])
                     while not 0 <= abs_Cr <= 9 or not 0 <= oor_Cr <= 9:
-                        raise invalidInputNum
+                        raise InvalidInputNum
 
-                except invalidInputNum:
+                except InvalidInputNum:
                     sys.stderr.write("abs ou coo hors norme")
                     self.count4 += 1
 
                 try:
                     ori_Cr = self.tab[5]
                     if ori_Cr not in ["v", "V", "h", "H"]:
-                        raise invalidInputOri
+                        raise InvalidInputOri
 
-                except invalidInputOri:
+                except InvalidInputOri:
                     sys.stderr.write("orientation incorrect")
                     ori_Cr = "v"
 
@@ -131,8 +131,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count4 += 1
 
@@ -145,8 +145,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count4 += 1
 
@@ -166,18 +166,18 @@ class Joueur:
                     abs_Ct = int(self.tab[6])
                     oor_Ct = int(self.tab[7])
                     while not 0 <= abs_Cr <= 9 or not 0 <= oor_Cr <= 9:
-                        raise invalidInputNum
+                        raise InvalidInputNum
 
-                except invalidInputNum:
+                except InvalidInputNum:
                     sys.stderr.write("abs ou coo hors norme")
                     self.count3 += 1
 
                 try:
                     ori_Ct = self.tab[8]
                     if ori_Ct not in ["v", "V", "h", "H"]:
-                        raise invalidInputOri
+                        raise InvalidInputOri
 
-                except invalidInputOri:
+                except InvalidInputOri:
                     sys.stderr.write("orientation incorrect")
                     ori_Ct = "v"
 
@@ -194,8 +194,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count3 += 1
 
@@ -208,8 +208,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count3 += 1
 
@@ -229,18 +229,18 @@ class Joueur:
                     abs_Sm = int(self.tab[9])
                     oor_Sm = int(self.tab[10])
                     while not 0 <= abs_Sm <= 9 or not 0 <= oor_Sm <= 9:
-                        raise invalidInputNum
+                        raise InvalidInputNum
 
-                except invalidInputNum:
+                except InvalidInputNum:
                     sys.stderr.write("abs ou coo hors norme")
                     self.count2 += 1
 
                 try:
                     ori_Sm = self.tab[11]
                     if ori_Sm not in ["v", "V", "h", "H"]:
-                        raise invalidInputOri
+                        raise InvalidInputOri
 
-                except invalidInputOri:
+                except InvalidInputOri:
                     sys.stderr.write("orientation incorrect")
                     ori_Sm = "v"
 
@@ -257,8 +257,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count2 += 1
 
@@ -271,8 +271,8 @@ class Joueur:
                             self.flotte.append(bateau)
                             drapeau = False
                         else:
-                            raise invalidPostion
-                except invalidPostion:
+                            raise InvalidPostion
+                except InvalidPostion:
                     sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count2 += 1
 
@@ -308,16 +308,16 @@ class Joueur:
                         try:
                             if self.terrain_ennemi.terrain_ennemi[ligne][col] == "O" or \
                                     self.terrain_ennemi.terrain_ennemi[ligne][col] == "X":
-                                raise invalidCooCiblee
+                                raise InvalidCooCiblee
                             else:
                                 self.terrain_ennemi.terrain_ennemi[ligne][col] = "O"
                                 self.emplacements['o'].append((ligne, col))
-                        except invalidCooCiblee:
+                        except InvalidCooCiblee:
                             sys.stderr.write("Coordonnées déjà ciblées....Regardez votre carte!")
 
                 else:
-                    raise invalidCooCiblee
-            except invalidCooCiblee:
+                    raise InvalidCooCiblee
+            except InvalidCooCiblee:
                 sys.stderr.write("Ne visez pas la Lune, entrez des coordonnées valides...")
 
 
