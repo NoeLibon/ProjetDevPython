@@ -1,14 +1,14 @@
-class invalidInputNum(Exception):
+class InvalidInputNum(Exception):
     pass
 
 
-class invalidInputOri(Exception):
+class InvalidInputOri(Exception):
     pass
 
 
-class invalidPostion(Exception):
+class InvalidPostion(Exception):
     pass
 
 
-class invalidCooCiblee(Exception):
+class InvalidCooCiblee(Exception):
     pass
