@@ -6,7 +6,7 @@ class InvalidInputOri(Exception):
     pass
 
 
-class InvalidPostion(Exception):
+class InvalidPosition(Exception):
     pass
 
 
