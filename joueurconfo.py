@@ -32,7 +32,7 @@ class Joueur:
         self.terrain_ennemi.apercu_terrain_ennemi()
         self.grille.apercu_grille()
 
-    def placement5(self):
+    def placement_Porte_Avion(self):
         global ori_PA, abs_PA, oor_PA
         drapeau = True
         while drapeau:
@@ -44,7 +44,7 @@ class Joueur:
                         raise invalidInputNum
 
                 except invalidInputNum:
-                    print("abs ou coo hors norme")
+                    sys.stderr.write("abs ou coo hors norme")
                     self.count5 += 1
 
                 try:
@@ -53,7 +53,7 @@ class Joueur:
                         raise invalidInputOri
 
                 except invalidInputOri:
-                    print("orientation incorrect")
+                    sys.stderr.write("orientation incorrect")
                     ori_PA = "v"
 
                 if self.count5 >= 1:
@@ -71,7 +71,7 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count5 += 1
 
                 try:
@@ -85,16 +85,16 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count5 += 1
                 os.system('cls')
                 self.apercu_ocean()
 
             except ValueError:
-                print("Entrez un numéro...\n")
+                sys.stderr.write("Entrez un numéro...\n")
                 self.count5 += 1
 
-    def placement4(self):
+    def placement_Croiseur(self):
         global ori_Cr, abs_Cr, oor_Cr
         drapeau = True
         while drapeau:
@@ -106,7 +106,7 @@ class Joueur:
                         raise invalidInputNum
 
                 except invalidInputNum:
-                    print("abs ou coo hors norme")
+                    sys.stderr.write("abs ou coo hors norme")
                     self.count4 += 1
 
                 try:
@@ -115,7 +115,7 @@ class Joueur:
                         raise invalidInputOri
 
                 except invalidInputOri:
-                    print("orientation incorrect")
+                    sys.stderr.write("orientation incorrect")
                     ori_Cr = "v"
 
                 if self.count4 >= 1:
@@ -133,7 +133,7 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count4 += 1
 
                 try:
@@ -147,17 +147,17 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count4 += 1
 
                 os.system('cls')
                 self.apercu_ocean()
 
             except ValueError:
-                print("Entrez un numéro...\n")
+                sys.stderr.write("Entrez un numéro...\n")
                 self.count4 += 1
 
-    def placement3(self):
+    def placement_Contre_Torpilleur(self):
         global ori_Ct, abs_Ct, oor_Ct
         drapeau = True
         while drapeau:
@@ -169,7 +169,7 @@ class Joueur:
                         raise invalidInputNum
 
                 except invalidInputNum:
-                    print("abs ou coo hors norme")
+                    sys.stderr.write("abs ou coo hors norme")
                     self.count3 += 1
 
                 try:
@@ -178,7 +178,7 @@ class Joueur:
                         raise invalidInputOri
 
                 except invalidInputOri:
-                    print("orientation incorrect")
+                    sys.stderr.write("orientation incorrect")
                     ori_Ct = "v"
 
                 if self.count3 >= 1:
@@ -196,7 +196,7 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count3 += 1
 
                 try:
@@ -210,17 +210,17 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count3 += 1
 
                 os.system('cls')
                 self.apercu_ocean()
 
             except ValueError:
-                print("Entrez un numéro...\n")
+                sys.stderr.write("Entrez un numéro...\n")
                 self.count3 += 1
 
-    def placement2(self):
+    def placement_Sous_Marin(self):
         global ori_Sm, abs_Sm, oor_Sm
         drapeau = True
         while drapeau:
@@ -232,7 +232,7 @@ class Joueur:
                         raise invalidInputNum
 
                 except invalidInputNum:
-                    print("abs ou coo hors norme")
+                    sys.stderr.write("abs ou coo hors norme")
                     self.count2 += 1
 
                 try:
@@ -241,7 +241,7 @@ class Joueur:
                         raise invalidInputOri
 
                 except invalidInputOri:
-                    print("orientation incorrect")
+                    sys.stderr.write("orientation incorrect")
                     ori_Sm = "v"
 
                 if self.count2 >= 1:
@@ -259,7 +259,7 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count2 += 1
 
                 try:
@@ -273,14 +273,14 @@ class Joueur:
                         else:
                             raise invalidPostion
                 except invalidPostion:
-                    print("deux bateaux occupent la même case ou dépassent de la grille")
+                    sys.stderr.write("deux bateaux occupent la même case ou dépassent de la grille")
                     self.count2 += 1
 
                 os.system('cls')
                 self.apercu_ocean()
 
             except ValueError:
-                print("Entrez un numéro...\n")
+                sys.stderr.write("Entrez un numéro...\n")
                 self.count2 += 1
 
     def coup_enregistre(self, ligne, col):
@@ -313,16 +313,16 @@ class Joueur:
                                 self.terrain_ennemi.terrain_ennemi[ligne][col] = "O"
                                 self.emplacements['o'].append((ligne, col))
                         except invalidCooCiblee:
-                            print("Coordonnées déjà ciblées....Regardez votre carte!")
+                            sys.stderr.write("Coordonnées déjà ciblées....Regardez votre carte!")
 
                 else:
                     raise invalidCooCiblee
             except invalidCooCiblee:
-                print("Ne visez pas la Lune, entrez des coordonnées valides...")
+                sys.stderr.write("Ne visez pas la Lune, entrez des coordonnées valides...")
 
 
         except ValueError:
-            print("Vous devez entrer des coordonnées....\n")
+            sys.stderr.write("Vous devez entrer des coordonnées....\n")
         os.system('cls')
         self.apercu_ocean()
 
@@ -348,8 +348,6 @@ class Joueur:
         if self.emplacements['x']['moi']:
             for emplacement in self.emplacements['x']['moi']:
                 ui.identifier_case_touchee_chez_moi(ligne=emplacement[0], col=emplacement[1])
-
-        print(self.emplacements)
 
         ui.lancer()
 
